@@ -1,4 +1,14 @@
-FROM ubuntu:latest
-LABEL authors="frostzt"
+FROM node:20-alpine
 
-ENTRYPOINT ["node", "./build/app.js"]
+WORKDIR /app
+
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+COPY pnpm-lock.yaml package.json ./
+RUN pnpm install --frozen-lockfile
+
+COPY . .
+
+RUN pnpm build
+
+CMD ["node", "dist/index.js"]
