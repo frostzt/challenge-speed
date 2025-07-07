@@ -11,4 +11,4 @@ COPY . .
 
 RUN pnpm build
 
-CMD ["node", "dist/index.js"]
+CMD ["node", "build/index.js"]
