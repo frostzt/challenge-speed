@@ -8,6 +8,7 @@ declare global {
       PG_PORT?: string;
       PG_USER?: string;
       PG_PASS?: string;
+      DB_NAME?: string;
     }
   }
 }

@@ -10,7 +10,7 @@ export const AppDataSource = new DataSource({
   port: Number(process.env.PG_PORT),
   username: process.env.PG_USER,
   password: process.env.PG_PASS,
-  database: "postgres",
+  database: process.env.DB_NAME,
   synchronize: true,
   logging: true,
   entities: [Contact],
