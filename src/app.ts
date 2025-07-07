@@ -13,6 +13,10 @@ const app = express();
 app.use(express.json());
 
 // Routes
+app.get("/health", (_req: express.Request, res: express.Response) => {
+  res.status(200).send("OK");
+});
+
 app.use("/identify", identificationController);
 
 // Attach global error handler
